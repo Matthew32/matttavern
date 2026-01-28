@@ -5,6 +5,7 @@ import DesktopIcon from './DesktopIcon';
 import Window from '../Window/Window';
 import Blog from '../Apps/Blog/Blog';
 import Presentation from '../Apps/Presentation/Presentation';
+import AdminPanel from '../Apps/Admin/AdminPanel';
 
 const DesktopWrapper = styled.div`
   width: 100vw;
@@ -29,6 +30,7 @@ const Desktop = () => {
     { id: 'my-computer', label: 'My Computer', icon: '💻', color: '#4287f5', component: () => <div style={{padding: 20}}>System Specs: Node.js Project</div> },
     { id: 'recycle-bin', label: 'Recycle Bin', icon: '🗑️', color: '#aaa', component: () => <div style={{padding: 20}}>The bin is empty.</div> },
     { id: 'blog', label: 'My Blog', icon: '📝', color: '#ff9900', component: Blog, width: '600px', height: '500px' },
+    { id: 'admin', label: 'Admin', icon: '🔧', color: '#00897B', component: AdminPanel, width: '600px', height: '500px' },
     { id: 'about', label: 'About Me', icon: '👤', color: '#cc00ff', component: () => <div style={{padding: 20}}><h3>Hello!</h3><p>I am a developer who loves retro UIs.</p></div> },
   ];
 

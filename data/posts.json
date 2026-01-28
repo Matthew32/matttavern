@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to my Portfolio",
+    "date": "2023-10-27",
+    "content": "<p>This is a portfolio styled like Windows XP. I built this using React and styled-components.</p><p>The goal was to recreate the nostalgic feeling of the early 2000s web and operating systems.</p><p>Feel free to look around!</p>",
+    "isHot": true
+  },
+  {
+    "id": 2,
+    "title": "Why Windows XP?",
+    "date": "2023-10-28",
+    "content": "<p>It is nostalgic and fun to recreate old UIs with modern web technologies.</p><p>Windows XP had a very distinct \"Luna\" theme that defined an era of computing for many of justx.</p>",
+    "isHot": true
+  },
+  {
+    "id": 3,
+    "title": "Project Update: Blog App",
+    "date": "2023-10-29",
+    "content": "<p>Added a blog app to the desktop environment.</p><p>This app demonstrates how we can have nested layouts within our \"windowed\" operating system simulation.</p>",
+    "isHot": false
+  },
+  {
+    "id": 4,
+    "title": "test",
+    "date": "2026-01-18",
+    "content": "Prologo\n\nla deuda tecnica, el ball of mood, la horrible tragedia de dejar codigo sin modificar y esperanzas a cambios grandes.\n\nLas compañias de hoy en dia, se dejan la mayor parte del código deseado de alguna manera que no hace falta. Dejan todo para otro dia, sin ninguna necesidad\n\nDeberiamos hacer x, esto estaria bien asi, necesitariamos el código para mañana debido a el mercado actual en...\n\nEl horrible estado del software en los dias actuales y que toda conexión entre todo este de una manera que al tocar se separe entre ellos.\n\n\nLa verdad es que el estado de conexión se puede conseguir cada dia es algo bastante destornillante y los esfuerzos para hacer buen software es la base de todo, pero el hecho de no poder hacerlo en el momento. Es muy jodido, me gustaria poder estar a tope con todo esto la verdad.\n\nEl Software que especie tan maravillosa, cada punto requiere de una cosistencia y ser capaz de poder luchar contra el. A la vez de poder amarlo por igual.\n\nNo quiero un hijo tonto. Quiero un hijo que sea algo bonito y estar orgulloso por lo que es. Todo problema tiene solución y todo tiene su punto de vista. Lo que quiero decir que el software es algo a tratar mejor. Y sirve para solucionar los problemas que tenemos como humanos.\n\nY parece que nuestro problema actual es el hecho que el ser humano no es capaz de determinar ni esforzarse en nada. Y eso es muy jodido para todas las versiones venideras y las actuales.\n\nLo que quiero decir es que el software  no es algo a tomarse a la ligera, necesita un cariño y un tiempo y por mucho que uno se canse o puede que no puede mas.\n\nAy que tomarse un descanso y volver. Lo que puede llegar a hacer uno con esto es increible.\n\n",
+    "isHot": false,
+    "published": false
+  }
+]

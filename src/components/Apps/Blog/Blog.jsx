@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const BlogLayout = styled.div`
@@ -92,75 +92,36 @@ const Placeholder = styled.div`
 `;
 
 const Blog = () => {
-  const posts = [
-    { 
-      id: 1, 
-      title: 'Welcome to my Portfolio', 
-      date: '2023-10-27', 
-      content: `
-        <p>This is a portfolio styled like Windows XP. I built this using React and styled-components.</p>
-        <p>The goal was to recreate the nostalgic feeling of the early 2000s web and operating systems.</p>
-        <p>Feel free to look around!</p>
-      `,
-      isHot: true
-    },
-    { 
-      id: 2, 
-      title: 'Why Windows XP?', 
-      date: '2023-10-28', 
-      content: `
-        <p>It is nostalgic and fun to recreate old UIs with modern web technologies.</p>
-        <p>Windows XP had a very distinct "Luna" theme that defined an era of computing for many of us.</p>
-      `,
-      isHot: true
-    },
-    { 
-      id: 3, 
-      title: 'Project Update: Blog App', 
-      date: '2023-10-29', 
-      content: `
-        <p>Added a blog app to the desktop environment.</p>
-        <p>This app demonstrates how we can have nested layouts within our "windowed" operating system simulation.</p>
-      `,
-      isHot: false
-    },
-    {
-      id: 4,
-      title: 'React Hooks Deep Dive',
-      date: '2023-11-05',
-      content: `
-        <p>Understanding useEffect and useState is crucial for modern React development.</p>
-        <p>Let's explore how closure staleness affects your hooks...</p>
-      `,
-      isHot: true
-    },
-    {
-      id: 5,
-      title: 'CSS-in-JS vs CSS Modules',
-      date: '2023-11-12',
-      content: `
-        <p>There are many ways to style React apps. In this project, I used styled-components for its dynamic props capabilities.</p>
-      `,
-      isHot: false
-    }
-  ];
-
-  // Default to the first post or null
-  const [selectedPostId, setSelectedPostId] = useState(posts[0].id);
-
+  const [posts, setPosts] = useState([]);
+  const [selectedPostId, setSelectedPostId] = useState(null);
   const selectedPost = posts.find(p => p.id === selectedPostId);
+  const visiblePosts = posts.filter(p => p.published !== false);
 
-  // Filter for "Hot" or just show all sorted by some metric? 
-  // User asked for "top/hot articles". Let's assume all here are "articles" but we can group them.
-  // For now, I'll list all, maybe highlighting Hot ones or just list them all in the sidebar as requested.
-  // User said "left side to show all the top/hot articles". I'll list them all there.
+  useEffect(() => {
+    let mounted = true;
+    fetch('/api/posts')
+      .then(r => r.json())
+      .then(data => {
+        if (!mounted) return;
+        const arr = Array.isArray(data) ? data : [];
+        setPosts(arr);
+        const first = arr.find(p => p.published !== false);
+        setSelectedPostId(first ? first.id : null);
+      })
+      .catch(() => {
+        if (!mounted) return;
+        setPosts([]);
+        setSelectedPostId(null);
+      });
+    return () => { mounted = false; };
+  }, []);
 
   return (
     <BlogLayout>
       <Sidebar>
         <SidebarTitle>Top Articles</SidebarTitle>
         <ArticleList>
-          {posts.map(post => (
+          {visiblePosts.map(post => (
             <ArticleItem 
               key={post.id} 
               onClick={() => setSelectedPostId(post.id)}
