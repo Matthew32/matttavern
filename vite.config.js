@@ -6,6 +6,9 @@ import crypto from 'crypto'
 
 // https://vite.dev/config/
 export default defineConfig({
+  preview: {
+    allowedHosts: ['matttavern.com']
+  },
   plugins: [
     {
       name: 'posts-api',
