@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Desktop />} />
-        <Route path="/blog" element={<div style={{ padding: 20 }}><Blog /></div>} />
+        <Route path="/blog" element={<Blog fullPage />} />
       </Routes>
     </BrowserRouter>
   );

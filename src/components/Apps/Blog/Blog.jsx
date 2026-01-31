@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const BlogLayout = styled.div`
   display: flex;
-  height: 100vh;
+  height: ${props => props.$fullPage ? '100vh' : '100%'};
   min-height: 0;
   font-family: 'Verdana', sans-serif;
   background-color: white;
@@ -94,7 +94,7 @@ const Placeholder = styled.div`
   font-style: italic;
 `;
 
-const Blog = () => {
+const Blog = ({ fullPage = false }) => {
   const [posts, setPosts] = useState([]);
   const [selectedPostId, setSelectedPostId] = useState(null);
   const selectedPost = posts.find(p => p.id === selectedPostId);
@@ -119,8 +119,16 @@ const Blog = () => {
     return () => { mounted = false; };
   }, []);
 
+  useEffect(() => {
+    if (fullPage) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'auto';
+      return () => { document.body.style.overflow = prev || 'hidden'; };
+    }
+  }, [fullPage]);
+
   return (
-    <BlogLayout>
+    <BlogLayout $fullPage={fullPage}>
       <Sidebar>
         <SidebarTitle>Top Articles</SidebarTitle>
         <ArticleList>

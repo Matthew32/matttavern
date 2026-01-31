@@ -90,10 +90,12 @@ const Button = styled.button`
 
 const Content = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   margin: 0;
   border: none;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   background-image: 
     linear-gradient(#A4C3E3 1px, transparent 1px);
