@@ -1,31 +1,10 @@
 [
   {
     "id": 1,
-    "title": "Welcome to my Portfolio",
-    "date": "2023-10-27",
-    "content": "<p>This is a portfolio styled like Windows XP. I built this using React and styled-components.</p><p>The goal was to recreate the nostalgic feeling of the early 2000s web and operating systems.</p><p>Feel free to look around!</p>",
-    "isHot": true
-  },
-  {
-    "id": 2,
-    "title": "Why Windows XP?",
-    "date": "2023-10-28",
-    "content": "<p>It is nostalgic and fun to recreate old UIs with modern web technologies.</p><p>Windows XP had a very distinct \"Luna\" theme that defined an era of computing for many of justx.</p>",
-    "isHot": true
-  },
-  {
-    "id": 3,
-    "title": "Project Update: Blog App",
-    "date": "2023-10-29",
-    "content": "<p>Added a blog app to the desktop environment.</p><p>This app demonstrates how we can have nested layouts within our \"windowed\" operating system simulation.</p>",
-    "isHot": false
-  },
-  {
-    "id": 4,
-    "title": "test",
-    "date": "2026-01-18",
-    "content": "Prologo\n\nla deuda tecnica, el ball of mood, la horrible tragedia de dejar codigo sin modificar y esperanzas a cambios grandes.\n\nLas compañias de hoy en dia, se dejan la mayor parte del código deseado de alguna manera que no hace falta. Dejan todo para otro dia, sin ninguna necesidad\n\nDeberiamos hacer x, esto estaria bien asi, necesitariamos el código para mañana debido a el mercado actual en...\n\nEl horrible estado del software en los dias actuales y que toda conexión entre todo este de una manera que al tocar se separe entre ellos.\n\n\nLa verdad es que el estado de conexión se puede conseguir cada dia es algo bastante destornillante y los esfuerzos para hacer buen software es la base de todo, pero el hecho de no poder hacerlo en el momento. Es muy jodido, me gustaria poder estar a tope con todo esto la verdad.\n\nEl Software que especie tan maravillosa, cada punto requiere de una cosistencia y ser capaz de poder luchar contra el. A la vez de poder amarlo por igual.\n\nNo quiero un hijo tonto. Quiero un hijo que sea algo bonito y estar orgulloso por lo que es. Todo problema tiene solución y todo tiene su punto de vista. Lo que quiero decir que el software es algo a tratar mejor. Y sirve para solucionar los problemas que tenemos como humanos.\n\nY parece que nuestro problema actual es el hecho que el ser humano no es capaz de determinar ni esforzarse en nada. Y eso es muy jodido para todas las versiones venideras y las actuales.\n\nLo que quiero decir es que el software  no es algo a tomarse a la ligera, necesita un cariño y un tiempo y por mucho que uno se canse o puede que no puede mas.\n\nAy que tomarse un descanso y volver. Lo que puede llegar a hacer uno con esto es increible.\n\n",
-    "isHot": false,
-    "published": false
+    "title": "Docker Utils",
+    "date": "2026-01-31",
+    "content": "<h1>Docker Essential Operations</h1><h2>1. Important Commands</h2><div class='command-box'><ul><li><code>docker ps</code>: List running containers.</li><li><code>docker ps -a</code>: List all containers (including stopped ones).</li><li><code>docker system prune -a</code>: <span class='warning'>DANGER!</span> Removes all unused images, containers, and networks.</li></ul></div><h2>2. Docker Compose Profiles</h2><p>Use profiles to group services (e.g., dev, test, debug).</p><pre><code>services:web:image: my-app:latestdb-admin:image: phpmyadminprofiles:- debugselenium-tests:image: selenium/standalone-chromeprofiles:- test</code></pre><p><strong>Execute profile:</strong> <code>docker compose --profile debug up</code></p><h2>3. Docker Compose Lifecycle</h2><table><thead><tr><th>Action</th><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><strong>Start</strong></td><td><code>docker compose up -d</code></td><td>Starts stack in background. Creates networks/volumes.</td></tr><tr><td><strong>Clean Exit</strong></td><td><code>docker compose down</code></td><td>Stops and removes containers and networks.</td></tr><tr><td><strong>Deep Clean</strong></td><td><code>docker compose down -v</code></td><td>Stops containers and <span class='warning'>deletes volumes</span>.</td></tr><tr><td><strong>Logs</strong></td><td><code>docker compose logs -f</code></td><td>Follow real-time output.</td></tr><tr><td><strong>Build</strong></td><td><code>docker compose build --no-cache</code></td><td>Fresh rebuild of images.</td></tr></tbody></table><h2>4. Makefile Configuration</h2><p>Simplify your workflow using a <code>Makefile</code>. <em>Note: Use tabs for indents.</em></p><pre><code># VariablesCOMPOSE = docker compose.PHONY: up down rebuild logs ps pruneup:$(COMPOSE) up -ddown:$(COMPOSE) downrebuild:$(COMPOSE) up -d --buildlogs:$(COMPOSE) logs -f --tail=100prune:docker system prune -a --volumes -f</code></pre><div class='command-box'><h3>How to execute:</h3><code>make up</code> | <code>make rebuild</code> | <code>make logs</code></div>",
+    "isHot": true,
+    "published": true
   }
 ]
