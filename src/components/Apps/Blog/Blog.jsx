@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const BlogLayout = styled.div`
   display: flex;
-  height: 100%;
+  height: 100vh;
+  min-height: 0;
   font-family: 'Verdana', sans-serif;
   background-color: white;
 `;
@@ -14,6 +15,7 @@ const Sidebar = styled.div`
   border-right: 1px solid #ccc;
   display: flex;
   flex-direction: column;
+  min-height: 0;
   overflow-y: auto;
   padding: 10px;
   /* Triangle corners (chamfered) on the left side */
@@ -58,6 +60,7 @@ const ArticleItem = styled.div`
 const MainContent = styled.div`
   flex: 1;
   padding: 20px;
+  min-height: 0;
   overflow-y: auto;
   background-color: white;
 `;
